@@ -1,0 +1,8 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true
+}

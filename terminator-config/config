@@ -1,0 +1,23 @@
+[global_config]
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#cfcfcf"
+  title_transmit_bg_color = "#e3ce00"
+  title_transmit_fg_color = "#000000"
+  window_state = maximise
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_darkness = 0.46
+    background_image = None
+    background_type = transparent
+    foreground_color = "#ffffff"
