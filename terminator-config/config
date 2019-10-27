@@ -17,7 +17,8 @@
 [profiles]
   [[default]]
     audible_bell = True
-    background_darkness = 0.46
-    background_image = None
+    background_darkness = 0.72
     background_type = transparent
+    cursor_color = "#ffffff"
     foreground_color = "#ffffff"
+    scrollback_infinite = True

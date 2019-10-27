@@ -1,0 +1,288 @@
+{
+	"name": "c-cpp-compile-run",
+	"displayName": "C/C++ Compile Run",
+	"description": "Compile & Run single c/c++ files easly",
+	"version": "1.0.5",
+	"publisher": "danielpinto8zz6",
+	"icon": "resources/logo.png",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"main": "./out/extension",
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"c",
+		"cpp",
+		"compile",
+		"run"
+	],
+	"bugs": {
+		"url": "https://github.com/danielpinto8zz6/c-cpp-compile-run/issues",
+		"email": "danielpinto8zz6@gmail.com"
+	},
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/danielpinto8zz6/c-cpp-compile-run/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danielpinto8zz6/c-cpp-compile-run.git"
+	},
+	"activationEvents": [
+		"onCommand:extension.CompileRun",
+		"onCommand:extension.CustomCompileRun",
+		"onCommand:extension.Compile",
+		"onCommand:extension.Run",
+		"onCommand:extension.CustomCompile",
+		"onCommand:extension.CustomRun"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "Log",
+				"mimetypes": [
+					"text/x-code-output"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "Log",
+				"scopeName": "code.log",
+				"path": "./syntaxes/log.tmLanguage"
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.CompileRun",
+				"title": "CompileRun : Compile with default flags & Run with default arguments"
+			},
+			{
+				"command": "extension.CustomCompileRun",
+				"title": "CompileRun : Compile with custom flags & Run with custom arguments"
+			},
+			{
+				"command": "extension.Compile",
+				"title": "CompileRun : Compile with default flags"
+			},
+			{
+				"command": "extension.Run",
+				"title": "CompileRun : Run with default arguments"
+			},
+			{
+				"command": "extension.CustomCompile",
+				"title": "CompileRun : Compile with custom flags"
+			},
+			{
+				"command": "extension.CustomRun",
+				"title": "CompileRun : Run with custom arguments"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "extension.CompileRun",
+					"when": "editorLangId ==  c"
+				},
+				{
+					"command": "extension.CompileRun",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.CompileRun",
+					"when": "editorLangId ==  cc"
+				},
+				{
+					"command": "extension.CustomCompileRun",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.CustomCompileRun",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.CustomCompileRun",
+					"when": "editorLangId ==  cc"
+				},
+				{
+					"command": "extension.Compile",
+					"when": "editorLangId ==  c"
+				},
+				{
+					"command": "extension.Compile",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.Compile",
+					"when": "editorLangId ==  cc"
+				},
+				{
+					"command": "extension.Run",
+					"when": "editorLangId ==  c"
+				},
+				{
+					"command": "extension.Run",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.Run",
+					"when": "editorLangId ==  cc"
+				},
+				{
+					"command": "extension.CustomCompile",
+					"when": "editorLangId ==  c"
+				},
+				{
+					"command": "extension.CustomCompile",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.CustomCompile",
+					"when": "editorLangId ==  cc"
+				},
+				{
+					"command": "extension.CustomRun",
+					"when": "editorLangId ==  c"
+				},
+				{
+					"command": "extension.CustomRun",
+					"when": "editorLangId ==  cpp"
+				},
+				{
+					"command": "extension.CustomRun",
+					"when": "editorLangId ==  cc"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"mac": "cmd+r",
+				"win": "f6",
+				"linux": "f6",
+				"key": "f6",
+				"command": "extension.CompileRun"
+			},
+			{
+				"mac": "cmd+t",
+				"win": "f7",
+				"linux": "f7",
+				"key": "f7",
+				"command": "extension.CustomCompileRun"
+			}
+		],
+		"configuration": {
+			"title": "Compile Run configuration",
+			"properties": {
+				"c-cpp-compile-run.c-compiler": {
+					"type": "string",
+					"default": "gcc",
+					"description": "Set your c compiler if it is not working",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.cpp-compiler": {
+					"type": "string",
+					"default": "g++",
+					"description": "Set your cpp compiler if it is not working",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.save-before-compile": {
+					"type": "boolean",
+					"default": true,
+					"description": "Saves the file before compilation",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.c-flags": {
+					"type": "string",
+					"description": "Flags: e.g. -Wall. default: -Wall -Wextra",
+					"default": "-Wall -Wextra",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.cpp-flags": {
+					"type": "string",
+					"description": "Flags: e.g. -Wall. default: -Wall -Wextra",
+					"default": "-Wall -Wextra",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.run-args": {
+					"type": "string",
+					"description": "Run arguments",
+					"scope": "resource"
+				},
+				"c-cpp-compile-run.run-in-external-terminal": {
+					"type": "boolean",
+					"default": false,
+					"description": "Run in a new external terminal",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js",
+		"release": "semantic-release",
+		"lint": "tslint -c tslint.json \"src/**/*.ts\" --fix"
+	},
+	"devDependencies": {
+		"@semantic-release/changelog": "^3.0.4",
+		"@semantic-release/git": "^7.0.16",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.1",
+		"@types/vscode": "^1.39.0",
+		"glob": "^7.1.4",
+		"gulp": "^4.0.2",
+		"mocha": "^6.2.1",
+		"semantic-release": "^15.13.24",
+		"semantic-release-vsce": "^2.2.8",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"find-process": "^1.4.2",
+		"lookpath": "^1.0.3"
+	},
+	"release": {
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			"@semantic-release/changelog",
+			[
+				"@semantic-release/git",
+				{
+					"assets": [
+						"package.json",
+						"CHANGELOG.md"
+					],
+					"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+				}
+			],
+			"@semantic-release/github"
+		],
+		"verifyConditions": [
+			"semantic-release-vsce",
+			"@semantic-release/github"
+		],
+		"prepare": {
+			"path": "semantic-release-vsce",
+			"packageVsix": "c-cpp-compile-run.vsix"
+		},
+		"publish": [
+			"semantic-release-vsce",
+			{
+				"path": "@semantic-release/github",
+				"assets": "c-cpp-compile-run.vsix"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f3b153f9-13ba-4992-9f90-1779d968df49",
+		"publisherId": "cad497d5-586d-419d-9f40-f9d14950a3dd",
+		"publisherDisplayName": "danielpinto8zz6"
+	}
+}

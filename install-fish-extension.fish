@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 
+sudo apt install curl
+
 #fisher
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
@@ -10,8 +12,11 @@ fisher add oh-my-fish/theme-bobthefish
 fisher add jethrokuan/z
 
 #fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ~/.fzf/install
-~/.fzf/install
+if not test -d ~/.fzf
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
+end
+fisher add fzf
 
 #edc/bass
 fisher add edc/bass
@@ -20,5 +25,10 @@ fisher add 0rax/fish-bd
 
 fisher add oh-my-fish/plugin-balias
 
+fisher add oh-my-fish/plugin-expand
+
+fisher add oh-my-fish/plugin-peco
+fisher add oh-my-fish/plugin-extract
+
 #symlink fish-conf.d
-(dirname (status -f))/link-fish-confs.fish
+eval (dirname (status -f))/link-fish-confs.fish

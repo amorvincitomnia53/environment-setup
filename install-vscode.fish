@@ -3,7 +3,7 @@ sudo snap install code --classic
 
 set DIR (dirname (readlink -m (status --current-filename)))
 
-ln -si $DIR/cpp-env/.* $DIR/cpp-env/* ~/
+ln -si $DIR/cpp-env/.* ~/
 
 # 初回の起動
 code

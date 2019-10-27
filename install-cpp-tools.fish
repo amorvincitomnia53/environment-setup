@@ -15,12 +15,12 @@ function read_confirm
   end
 end
 
-set GCC_LATEST_VERSION_NUM (string match -r '^g\+\+-([0-9.]*) ' (apt-cache search g++-) | awk 'NR%2==0' | sort -n | tail -1)
+set GCC_LATEST_VERSION_NUM (string match -r '^gcc-([0-9.]*) ' (apt-cache search gcc-) | awk 'NR%2==0' | sort -n | tail -1)
 set CLANG_FORMAT_LATEST_VERSION_NUM (string match -r '^clang-format-([0-9.]*) ' (apt-cache search clang-format-) | awk 'NR%2==0' | sort -n | tail -1)
 
-echo "Installing g++-$GCC_LATEST_VERSION_NUM, clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM, make, cmake, gdb, libeigen3-dev."
+echo "Installing gcc-$GCC_LATEST_VERSION_NUM, g++-$GCC_LATEST_VERSION_NUM, clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM, make, cmake, gdb, libeigen3-dev."
 read_confirm
-sudo apt install g++-$GCC_LATEST_VERSION_NUM clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM make cmake gdb libeigen3-dev
+sudo apt install gcc-$GCC_LATEST_VERSION_NUM g++-$GCC_LATEST_VERSION_NUM clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM make cmake gdb libeigen3-dev
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-$GCC_LATEST_VERSION_NUM 20 
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-$GCC_LATEST_VERSION_NUM 20 
