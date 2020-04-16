@@ -12,7 +12,7 @@ killall code
 sleep 1
 killall code
 
-mv ~/.vscode ~/.vscode.bak
-ln -si $DIR/vscode/home ~/.vscode
+# mv ~/.vscode ~/.vscode.bak
+# ln -si $DIR/vscode/home ~/.vscode
 
 ln -si $DIR/vscode/config/* ~/.config/Code/User/

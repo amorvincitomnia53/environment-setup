@@ -4,5 +4,6 @@
         "editor.defaultFormatter": "xaver.clang-format"
     },
     "files.autoSave": "onFocusChange",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "python.dataScience.sendSelectionToInteractiveWindow": true
 }

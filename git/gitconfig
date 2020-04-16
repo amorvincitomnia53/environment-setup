@@ -1,0 +1,12 @@
+[user]
+	email = contramundum53@outlook.com
+	name = Contramundum
+
+[core]
+	editor = vim
+	excludesfile = $HOME/.gitignore_global
+[init]
+	templatedir = $HOME/.git-template
+[alias]
+	aa = !git add --all && git status
+	sgl = log --graph --oneline --all --decorate
