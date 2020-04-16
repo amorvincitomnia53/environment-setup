@@ -4,9 +4,9 @@
 
 [core]
 	editor = vim
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = .gitignore_global
 [init]
-	templatedir = $HOME/.git-template
+	templatedir = .git-template
 [alias]
 	aa = !git add --all && git status
 	sgl = log --graph --oneline --all --decorate
