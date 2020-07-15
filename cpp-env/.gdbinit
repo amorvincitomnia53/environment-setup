@@ -1,8 +1,11 @@
 python
 import sys
 import os
-print("<<Loading " + os.path.dirname(os.path.realpath(".gdbinit")) + "/eigen-gdb-printer>>")
-sys.path.insert(0, os.path.dirname(os.path.realpath(".gdbinit")) + "/eigen-gdb-printer")
+import getpass
+user=getpass.getuser()
+modulepath = os.path.dirname(os.path.realpath(os.getenv("HOME") + "/.gdbinit")) + "/eigen-gdb-printer"
+print("<<Loading " + modulepath + ">>")
+sys.path.insert(0, modulepath)
 from printers import register_eigen_printers
 register_eigen_printers (None)
 end

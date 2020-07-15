@@ -1,5 +1,6 @@
 #!/usr/bin/fish
-sudo snap install code --classic
+
+#sudo snap install code --classic
 
 set DIR (dirname (readlink -m (status --current-filename)))
 

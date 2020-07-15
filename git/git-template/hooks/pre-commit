@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "pre-commit hook!"
+echo "HOME = $HOME"
+bash $HOME/.git-format-diff.sh
+
