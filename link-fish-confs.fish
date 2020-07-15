@@ -1,3 +1,3 @@
-#!/usr/bin/fish
-set DIR (dirname (readlink -m (status --current-filename)))
+#!/usr/bin/env fish
+set DIR (dirname (greadlink -m (status --current-filename)))
 ln -si $DIR/fish-conf.d/* ~/.config/fish/conf.d/

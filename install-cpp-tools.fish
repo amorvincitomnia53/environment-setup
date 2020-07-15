@@ -1,6 +1,6 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
-sudo apt update
+brew update
 
 function read_confirm
   while true
@@ -20,7 +20,7 @@ set CLANG_FORMAT_LATEST_VERSION_NUM (string match -r '^clang-format-([0-9.]*) ' 
 
 echo "Installing gcc-$GCC_LATEST_VERSION_NUM, g++-$GCC_LATEST_VERSION_NUM, clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM, make, cmake, gdb, libeigen3-dev."
 read_confirm
-sudo apt install gcc-$GCC_LATEST_VERSION_NUM g++-$GCC_LATEST_VERSION_NUM clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM make cmake gdb libeigen3-dev
+brew install gcc-$GCC_LATEST_VERSION_NUM g++-$GCC_LATEST_VERSION_NUM clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM make cmake gdb libeigen3-dev
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-$GCC_LATEST_VERSION_NUM 20 
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-$GCC_LATEST_VERSION_NUM 20 
@@ -31,7 +31,7 @@ sudo update-alternatives --set c++ /usr/bin/g++
 
 sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-$CLANG_FORMAT_LATEST_VERSION_NUM 30
 
-set DIR (dirname (readlink -m (status --current-filename)))
+set DIR (dirname (greadlink -m (status --current-filename)))
 ln -si $DIR/cpp-env/.* ~/
 
 sudo ln -si eigen3/Eigen /usr/include/Eigen

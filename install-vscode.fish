@@ -1,7 +1,7 @@
-#!/usr/bin/fish
-sudo snap install code --classic
+#!/usr/bin/env fish
+# sudo snap install code --classic
 
-set DIR (dirname (readlink -m (status --current-filename)))
+set DIR (dirname (greadlink -m (status --current-filename)))
 
 ln -si $DIR/cpp-env/.* ~/
 

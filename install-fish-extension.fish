@@ -1,6 +1,6 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
-sudo apt install curl
+# brew install curl
 
 #fisher
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
@@ -31,4 +31,4 @@ fisher add oh-my-fish/plugin-peco
 fisher add oh-my-fish/plugin-extract
 
 #symlink fish-conf.d
-eval (dirname (status -f))/link-fish-confs.fish
+eval fish (dirname (status -f))/link-fish-confs.fish
